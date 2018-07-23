@@ -1,7 +1,7 @@
 npm install expo-cli --global       //on new machine
 
 expo init tech_stach
-cd init tech_stach
+cd tech_stach
 expo start
 
 //scan QR on chrome path change App.js from main dir to ./src by changing nodemodule of expo in AppEntry.js
@@ -19,6 +19,8 @@ git checkout -b <branchname>
 
 4. Push the branch to your remote repository, so others can use it:	
 git push origin <branchname>
+ Push all branches to your remote repository:	
+git push --all origin
 
 5. Switch from one branch to another:	
 git checkout <branchname>

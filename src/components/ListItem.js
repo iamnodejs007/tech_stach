@@ -1,16 +1,26 @@
 import React, { Component } from 'react';
 import {CardSection} from './common';
-import { Text } from 'react-native';
+import { Text, View,TouchableWithoutFeedback } from 'react-native';
+import {connect} from 'react-redux';
+import * as actions from '../actions';
 
-export default class ListItem extends Component {
+
+
+class ListItem extends Component {
     
     render(){
         const { textStyle } = styles;
-        console.log(this.props.library.item.title)
+        const {id, title} =this.props.library.item;
+        console.log(this.props)
         return(
+       <TouchableWithoutFeedback onPress={()=> this.props.selectLibrary(id)}>
+       <View>
         <CardSection>
-         <Text style={textStyle}>{this.props.library.item.title}</Text>
-        </CardSection>)
+         <Text style={textStyle}>{title}</Text>
+        </CardSection>
+        </View>
+       </TouchableWithoutFeedback> 
+        )
     }
 }
 
@@ -20,3 +30,5 @@ const styles = {
         paddingLeft:15
     }
 }
+
+export default connect(null,actions)(ListItem);
