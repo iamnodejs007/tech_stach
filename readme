@@ -1,0 +1,8 @@
+npm install expo-cli --global       //on new machine
+
+expo init tech_stach
+cd init tech_stach
+expo start
+
+//scan QR on chrome path change App.js from main dir to ./src by changing nodemodule of expo in AppEntry.js
+// decided to keep app.js out
